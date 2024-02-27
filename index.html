@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    
+    <div id="moon">
+        <div id="moon-img">
+
+        </div>
+    </div>
+
+    <div id="num-one"></div>
+    <p>+</p>
+    <div id="num-two"></div>
+    <p>=</p>
+    <input type="text" id="answer">
+
+    <button id="btn">summon</button>
+
+</body>
+</html>
+
+<script>
+
+    const moon = document.querySelector('#moon');
+    const button = document.querySelector('#btn');
+    const moonImage = document.querySelector('#moon-img')
+    color = 0.5;
+    shadow = 0;
+
+
+    // function generateRandomNumbers() {
+        
+    //     const randomNumber = Math.ceil(Math.random() * 100);
+    //     const randomNumberTwo = Math.ceil(Math.random() * 100);
+    //     document.getElementById('num-one').innerText = randomNumber;
+    //     document.getElementById('num-two').innerText = randomNumberTwo;
+
+    // };
+
+
+    // function summonPower() {
+    //     const numOne = parseInt(document.getElementById('num-one').innerText);
+    //     const numTwo = parseInt(document.getElementById('num-two').innerText);
+    //     const answer = parseInt(document.getElementById('answer').value);
+
+    //     if (numOne + numTwo === answer) {
+            
+    //         color += 0.1;
+    //         shadow += 0.2;
+
+    //         moon.style.backgroundColor = "rgba(255, 255, 255, " + color + ")";
+    //         moon.style.boxShadow = "rgba(89, 161, 255, " + shadow + ") 10px 10px 100px 100px";
+    //         moonImage.style.opacity = color;
+
+    //         if (color >= 1) {
+    //             moon.classList.add('moon-animation');
+    //             color = 0.5;
+    //             shadow = 0;
+    //         };
+
+    //         generateRandomNumbers();
+            
+    //     } else {
+        
+    //         alert("The sum of num-one and num-two does not match the value entered.");
+    //     };
+
+    // };
+
+    //     window.onload = function() {
+    //         generateRandomNumbers();
+    //     };
+
+    
+    function summonPower() {
+
+        color+=0.1;
+        shadow+=0.2;
+
+        moon.style.backgroundColor = " rgba(255, 255, 255, " + color + ")";
+        moon.style.boxShadow = " rgba(232, 252, 253, " + shadow + ") 10px 10px 100px 100px";
+        moonImage.style.opacity = color;
+    
+
+        if (color>=1) {
+            
+            moon.classList.add('moon-animation');
+            color = 0.5;
+            shadow = 0;
+
+        };
+
+    };
+
+    
+    button.addEventListener("click", summonPower);
+
+</script>
