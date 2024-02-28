@@ -32,6 +32,9 @@
     const moonImage = document.querySelector('#moon-img')
     color = 0.5;
     shadow = 0;
+    deg = 0;
+    let myAnimation;
+    score = 0;
 
 
     function generateRandomNumbers() {
@@ -45,6 +48,7 @@
 
 
     function summonPower() {
+       
         const numOne = parseInt(document.getElementById('num-one').innerText);
         const numTwo = parseInt(document.getElementById('num-two').innerText);
         const answer = parseInt(document.getElementById('answer').value);
@@ -60,10 +64,11 @@
 
             if (color >= 1) {
                 moon.classList.add('moon-animation');
+                // moonSpin();
                 color = 0.5;
                 shadow = 0;
             };
-
+           
             generateRandomNumbers();
             
         } else {
@@ -73,9 +78,20 @@
 
     };
 
+    // function moonSpin() {
+
+    //     deg+=3;
+
+    //     moon.style.transform = "rotate(" + deg + "deg)"
+
+    //     myAnimation=requestAnimationFrame(moonSpin);
+
+    // };
+
         window.onload = function() {
             generateRandomNumbers();
         };
+
 
     
     // function summonPower() {
